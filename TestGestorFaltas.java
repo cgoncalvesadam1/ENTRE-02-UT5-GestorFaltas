@@ -8,7 +8,20 @@ public class TestGestorFaltas {
      * (ver enunciado)
      */
     public static void main(String[] args) {
-        
+        if(args.length != 1){
+            System.out.println("Solo se admite un argumento");
+        }
+        else{
+            GestorFaltas info = new GestorFaltas(Integer.parseInt(args[0]));
+            info.leerDeFichero();
+            System.out.println(info.toString());
+            
+            info.justificarFaltas("IRISO FLAMARIQUE", 6);
+            info.ordenar();
+            System.out.println(info.toString());
+            
+            info.anularMatricula();
+            System.out.println(info.toString());
+        }
     }
-
 }
